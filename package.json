@@ -1,0 +1,26 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This is the source code of the Portfolio of Shubham Kumar. \r To keep my webpage simple and easy to maintain I have used HTML, CSS, Javascript seperatly without using any temlates. \r NO other technologies like React, NextJs is used.\r This is done to keep things simple",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValientRH/Shubham-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValientRH/Shubham-Portfolio/issues"
+  },
+  "homepage": "https://github.com/ValientRH/Shubham-Portfolio#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "file-system": "^2.2.2"
+  }
+}
