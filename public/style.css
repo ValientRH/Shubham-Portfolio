@@ -1,10 +1,290 @@
 /* public/style.css */
+
+/* --- Global Styles & Typography --- */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #1a202c;
-  color: #f8f8f8;
+  font-family: "Poppins", sans-serif; /* A modern, clean font */
+  background-color: #0f172a; /* A darker, richer navy blue */
+  color: #e2e8f0; /* A softer off-white for text */
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* --- Header and Navigation Bar --- */
+header {
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #334155;
+  padding: 15px 20px; /* Reduced padding for mobile */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto; /* Allows horizontal scrolling if items don't fit */
+}
+
+nav {
+  white-space: nowrap; /* Prevents nav items from wrapping to a new line */
+}
+
+nav a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 15px; /* Reduced padding for nav items */
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 8px;
+}
+
+nav a:hover {
+  color: #ffffff;
+  background-color: #1e293b; /* Highlight on hover */
+}
+
+/* --- Hero (Home) Section --- */
+#home {
+  display: flex;
+  align-items: center; /* Changed back to center */
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80px 50px 40px;
+  box-sizing: border-box;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap-reverse;
+  max-width: 1200px;
+}
+
+.hero-text {
+  flex: 1; /* Allows text to take available space */
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.7rem;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 400px; /* Controls the size of your new image */
+  height: 400px;
+  object-fit: cover;
+  border-radius: 50%; /* Makes it circular, matching the other one */
+  border: 5px solid #334155;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+
+ #home {
+        align-items: flex-start; /* Aligns content to the top on mobile */
+        padding-top: 120px;      /* Adds space below the navbar */
+    }
+
+  .hero-container {
+    text-align: center;
+    /* This reduces the space between the stacked image and text */
+    gap: 30px;
+  }
+  .hero-text h1 {
+    font-size: 3.5rem;
+  }
+  .hero-image img {
+    /* We're making the image a bit smaller on mobile */
+    width: 280px;
+    height: 280px;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#home h1 {
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+#home p {
+  font-size: 1.5rem;
+  color: #94a3b8; /* A lighter gray for the subtitle */
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #38bdf8; /* A bright, modern blue */
+  color: #0f172a;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #7dd3fc;
+  transform: translateY(-3px); /* Lifts the button slightly on hover */
+}
+
+/* --- Projects Section --- */
+#projects {
+    padding: 80px 20px;
+}
+
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: #1e293b;
+    border-radius: 15px;
+    /* We remove 'overflow: hidden' as it's not needed for icons */
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.project-icon {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.project-icon i {
+    font-size: 6rem; /* Large icon size */
+    color: #38bdf8;   /* Use the accent color */
+}
+
+.project-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.project-info p {
+    flex-grow: 1; /* Pushes the tags and links to the bottom */
+    margin-bottom: 20px;
+}
+
+.project-tags {
+    margin-bottom: 20px;
+}
+
+.project-tags span {
+    background-color: #334155;
+    color: #cbd5e1;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+}
+
+.project-links a {
+    background-color: #38bdf8;
+    color: #0f172a;
+    margin-right: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.project-links a:hover {
+    background-color: #7dd3fc;
+}
+
+/* --- Skills Section --- */
+#skills {
+  padding: 80px 20px;
+  background-color: #1e293b; /* A slightly lighter background to stand out */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  background-color: #334155;
+  border-radius: 10px;
+  padding: 25px;
+  width: 150px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  background-color: #475569;
+}
+
+.skill-card i {
+  font-size: 3.5rem; /* Icon size */
+  color: #38bdf8; /* Icon color */
+  margin-bottom: 15px;
+}
+
+.skill-card span {
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 #about {
