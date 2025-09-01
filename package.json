@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "rimraf dist && node build.js && ncp public dist/public && ncp public/thanks.html dist/public/thanks.html"
+    "build": "rimraf dist && node build.js && ncp public dist/public && ncp thanks.html dist/thanks.html"
   },
   "repository": {
     "type": "git",
